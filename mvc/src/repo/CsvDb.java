@@ -187,8 +187,8 @@ public class CsvDb {
 
     private static String esc(String s) {
         if (s == null) return "";
-        if (s.contains(",") || s.contains(""")) {
-            return """ + s.replace(""","""") + """;
+        if (s.contains(",") || s.contains("\"")) {
+            return "\"" + s.replace("\"", "\"\"") + "\"";
         }
         return s;
     }
